@@ -1,0 +1,9 @@
+Nome: Gustavo Cauzzi
+
+A ideia inicial é fazer uma simulação de física. Tive essa ideia me inspirando nesta aplicação feita por alguém para o estudo de campos elétricos.
+
+https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_en.html
+
+Por mais que não entendo de eletrônica, pensei em fazer algo parecido onde seria um plano 2D, parecido com um jogo de plataforma, onde o usuário iria poder adicionar corpos com massas especificas, tamanhos, alterar força da gravidade, etc, mostrando os valores e como os corpos interagem entre sí.
+Essa simulação seria feito usando a biblioteca P5.js, que é uma biblioteca do javascript para desenvolvimento web voltado para criatividade, porém também é utilizado para fazer coisas malucas como esta.
+Tive algumas outras ideias mas eu imagino que este seja a mais útil.

@@ -104,15 +104,26 @@ function atalhos(){
     text("8",768,90);
 }
 
-function mostrarFps(){
+const SAMPLING_FREQUENCY = 10000  // in hertz
+const SAMPLING_PERIOD_S = 1 / SAMPLING_FREQUENCY // in seconds
+
+const filteredFPS = new Filter(1, 100, SAMPLING_PERIOD_S, 0)
+function mostrarFps() {
     fill(0);
     stroke(0);
-    rect(width/2-50,0,100,50);
+    rect(width / 2 - 50, 0, 100, 50);
     fill(255);
     noStroke();
     textSize(15);
-    text("FPS: "+round(frameRate(),2),width/2-40,15);
-    text("Bolas: "+bolas.length,width/2-40,40);
+
+    if (!mostrarFps.interval) {
+        mostrarFps.interval = setInterval(() => {
+            mostrarFps.fps = filteredFPS.update(frameRate())
+        }, SAMPLING_PERIOD_S * 1000);
+    }
+
+    text("FPS: " + round(mostrarFps.fps, 0), width / 2 - 40, 15);
+    text("Bolas: " + bolas.length, width / 2 - 40, 40);
 }
 
 function menuConfig(){
